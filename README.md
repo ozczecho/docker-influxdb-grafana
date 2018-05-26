@@ -14,8 +14,8 @@ The main purpose of this image is to be used to show data from a [Home Assistant
 |--------------|-------|
 | Docker Image | 2.0.0 |
 | Ubuntu       | 16.04 |
-| InfluxDB     | 1.2   |
-| Grafana      | 4.1.1 |
+| InfluxDB     | 1.5.3 |
+| Grafana      | 5.1.3 |
 
 ## Quick Start
 
@@ -48,19 +48,20 @@ docker start docker-influxdb-grafana
 ## Mapped Ports
 
 ```
-Host		Container		Service
+Host  Container   Service
 
-3003		3003			grafana
-3004		8083			influxdb-admin
-8086		8086			influxdb
-22022		22				sshd
+3003  3003  grafana
+3004  8083  influxdb-admin
+8086  8086  influxdb
+22022   22  sshd
 ```
+
 ## SSH
 
 ```sh
 ssh root@localhost -p 22022
-```
 Password: root
+```
 
 ## Grafana
 
