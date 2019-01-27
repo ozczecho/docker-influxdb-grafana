@@ -50,10 +50,10 @@ docker start docker-influxdb-grafana
 ```
 Host  Container   Service
 
-3003  3003  grafana
-3004  8083  influxdb-admin
-8086  8086  influxdb
-22022   22  sshd
+3003  3003      grafana
+3004  8083      influxdb-admin
+8086  8086      influxdb
+22022   22      sshd
 ```
 
 ## SSH
