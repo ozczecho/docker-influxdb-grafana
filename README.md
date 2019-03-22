@@ -14,8 +14,8 @@ The main purpose of this image is to be used to show data from a [Home Assistant
 |--------------|-------|
 | Docker Image | 2.0.0 |
 | Ubuntu       | 16.04 |
-| InfluxDB     | 1.5.3 |
-| Grafana      | 5.1.3 |
+| InfluxDB     | 1.7.4 |
+| Grafana      | 6.0.1 |
 
 ## Quick Start
 
