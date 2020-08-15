@@ -1,12 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 LABEL Phil Hawthorne <me@philhawthorne.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
-ENV INFLUXDB_VERSION 1.7.4
-ENV GRAFANA_VERSION  6.0.1
+ENV INFLUXDB_VERSION 1.8.1
+ENV GRAFANA_VERSION  7.1.3
 
 # Database Defaults
 ENV INFLUXDB_GRAFANA_DB datasource
@@ -36,7 +36,7 @@ RUN apt-get -y update && \
   openssh-server \
   supervisor \
   wget && \
- curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+ curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
  apt-get install -y nodejs
 
 WORKDIR /root
@@ -54,7 +54,7 @@ RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION
     dpkg -i influxdb_${INFLUXDB_VERSION}_amd64.deb && rm influxdb_${INFLUXDB_VERSION}_amd64.deb
 
 # Install Grafana
-RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${GRAFANA_VERSION}_amd64.deb && \
+RUN wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb && \
     dpkg -i grafana_${GRAFANA_VERSION}_amd64.deb && rm grafana_${GRAFANA_VERSION}_amd64.deb
 
 # Cleanup
